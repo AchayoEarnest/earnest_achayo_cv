@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevSecOps Engineer CV - Earnest Odhiambo Achayo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .download-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #e74c3c;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .download-btn:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .cv-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #e74c3c 100%);
+        color: white;
+        padding: 50px 40px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      .header .title {
+        font-size: 19px;
+        opacity: 0.95;
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-link {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 35px;
+      }
+
+      .section-title {
+        color: #2c3e50;
+        font-size: 22px;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #e74c3c;
+        font-weight: 600;
+      }
+
+      .summary-text {
+        line-height: 1.8;
+        color: #555;
+        text-align: justify;
+        font-size: 15px;
+      }
+
+      .competencies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .competency-item {
+        background: #f8f9fa;
+        padding: 12px 18px;
+        border-radius: 8px;
+        color: #2c3e50;
+        border-left: 4px solid #e74c3c;
+        font-size: 14px;
+      }
+
+      .skills-section {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .skill-row {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: baseline;
+      }
+
+      .skill-label {
+        font-weight: 600;
+        color: #2c3e50;
+        min-width: 200px;
+        font-size: 15px;
+      }
+
+      .skill-value {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .experience-item {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #e74c3c;
+      }
+
+      .job-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .company-name {
+        color: #e74c3c;
+        font-size: 16px;
+        margin-top: 4px;
+      }
+
+      .date-range {
+        color: #7f8c8d;
+        font-size: 14px;
+        font-style: italic;
+        margin-top: 4px;
+      }
+
+      .responsibilities {
+        list-style: none;
+        margin-top: 12px;
+      }
+
+      .responsibilities li {
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 8px;
+        color: #555;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .responsibilities li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #e74c3c;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .project-item {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 8px;
+        border-left: 4px solid #27ae60;
+      }
+
+      .project-title {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+
+      .project-desc {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .project-link {
+        color: #e74c3c;
+        text-decoration: none;
+        font-size: 12px;
+        margin-top: 6px;
+        display: inline-block;
+      }
+
+      .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .cert-item {
+        background: #fff3cd;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #f39c12;
+      }
+
+      .cert-name {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+
+      .cert-issuer {
+        color: #7f8c8d;
+        font-size: 13px;
+      }
+
+      .education-item {
+        margin-bottom: 18px;
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      .degree {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+      }
+
+      .institution {
+        color: #e74c3c;
+        margin-top: 4px;
+        font-size: 14px;
+      }
+
+      .year {
+        color: #7f8c8d;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+
+      .referees-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .referee-item {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 8px;
+        border-top: 4px solid #27ae60;
+      }
+
+      .referee-name {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .referee-title {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .referee-contact {
+        color: #e74c3c;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+
+        .download-btn {
+          display: none;
+        }
+
+        .cv-container {
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        .section {
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 28px;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .content {
+          padding: 20px;
+        }
+
+        .download-btn {
+          top: 10px;
+          right: 10px;
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .competencies-grid,
+        .projects-grid,
+        .certifications-grid,
+        .referees-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .skill-row {
+          flex-direction: column;
+        }
+
+        .skill-label {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="download-btn" onclick="downloadCV()">🔒 Download PDF</button>
+
+    <div class="cv-container">
+      <div class="header">
+        <h1>EARNEST ODHIAMBO ACHAYO</h1>
+        <div class="title">
+          DevSecOps Engineer | Security-Focused Software Developer
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item">📧 earnytechlive@gmail.com</div>
+          <div class="contact-item">📱 0111486539 / 0739536402</div>
+          <div class="contact-item">📍 P.O. Box 82-40605, Sidindi, Siaya</div>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/AchayoEarnest"
+            class="social-link"
+            target="_blank"
+          >
+            GitHub: github.com/AchayoEarnest
+          </a>
+          <a
+            href="https://linkedin.com/in/earnest-achayo"
+            class="social-link"
+            target="_blank"
+          >
+            LinkedIn: linkedin.com/in/earnest-achayo
+          </a>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+          <p class="summary-text">
+            Results-driven DevSecOps Engineer and Security-Focused Software
+            Developer with 4+ years of experience building secure, scalable
+            applications and implementing robust security practices in software
+            development lifecycles. Proven expertise in full-stack development
+            (React, Django, Ruby on Rails), secure coding practices, data
+            security, and DevOps automation. Skilled in integrating security
+            tools into CI/CD pipelines, conducting vulnerability assessments,
+            and ensuring compliance with security standards. Adept at bridging
+            the gap between development, security, and operations teams to
+            deliver secure digital products.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">CORE COMPETENCIES</h2>
+          <div class="competencies-grid">
+            <div class="competency-item">
+              Application Security & Secure Coding
+            </div>
+            <div class="competency-item">DevSecOps Pipeline Integration</div>
+            <div class="competency-item">
+              Vulnerability Assessment & Penetration Testing
+            </div>
+            <div class="competency-item">
+              CI/CD Automation & Security Scanning
+            </div>
+            <div class="competency-item">Cloud Security (AWS, Azure, GCP)</div>
+            <div class="competency-item">
+              Container Security (Docker, Kubernetes)
+            </div>
+            <div class="competency-item">
+              Security Compliance & Risk Management
+            </div>
+            <div class="competency-item">
+              Incident Response & Threat Mitigation
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">TECHNICAL SKILLS</h2>
+          <div class="skills-section">
+            <div class="skill-row">
+              <div class="skill-label">Programming Languages:</div>
+              <div class="skill-value">
+                JavaScript, Python, Ruby, SQL, HTML, CSS, Bash
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Frameworks & Libraries:</div>
+              <div class="skill-value">
+                React JS, Ruby on Rails, Django, Node.js, Express.js
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Security Tools:</div>
+              <div class="skill-value">
+                OWASP ZAP, Burp Suite, SonarQube, Snyk, Trivy, Git-secrets, Nmap
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">DevOps & CI/CD:</div>
+              <div class="skill-value">
+                Docker, Kubernetes, Jenkins, GitHub Actions, GitLab CI,
+                Terraform
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Cloud Platforms:</div>
+              <div class="skill-value">
+                AWS (EC2, S3, IAM, CloudWatch), Azure, Google Cloud Platform
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Databases & Security:</div>
+              <div class="skill-value">
+                MySQL, PostgreSQL, MongoDB, Database Encryption, SQL Injection
+                Prevention
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Security Standards:</div>
+              <div class="skill-value">
+                OWASP Top 10, CIS Benchmarks, GDPR, HIPAA Compliance
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Version Control & Tools:</div>
+              <div class="skill-value">
+                Git, GitHub, GitLab, Bitbucket, VS Code, Figma
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+          <div class="experience-item">
+            <div class="job-title">
+              Data Officer & Security-Focused Developer
+            </div>
+            <div class="company-name">
+              Center for Health Solutions (CHS), Ugunja Sub-County
+            </div>
+            <div class="date-range">March 2023 – September 2025</div>
+            <ul class="responsibilities">
+              <li>
+                Implemented secure data collection systems using Google App
+                Scripts with input validation and encryption protocols to
+                protect sensitive health data
+              </li>
+              <li>
+                Conducted regular security audits and data quality assessments
+                to ensure HIPAA compliance and database integrity for DREAMS
+                Program
+              </li>
+              <li>
+                Developed and deployed secure real-time web and mobile data
+                reporting systems with authentication and authorization
+                mechanisms
+              </li>
+              <li>
+                Led security-focused code reviews and established secure coding
+                standards for development team
+              </li>
+              <li>
+                Implemented data encryption at rest and in transit for sensitive
+                program information
+              </li>
+              <li>
+                Created automated security scanning pipelines for web
+                applications to detect vulnerabilities
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Software Developer</div>
+            <div class="company-name">Moringa School</div>
+            <div class="date-range">March 2022 – November 2022</div>
+            <ul class="responsibilities">
+              <li>
+                Designed and deployed secure full-stack web applications using
+                React JS and Ruby on Rails with OWASP security best practices
+              </li>
+              <li>
+                Implemented secure RESTful APIs with JWT authentication, input
+                validation, and rate limiting
+              </li>
+              <li>
+                Optimized database queries while implementing SQL injection
+                prevention and parameterized queries
+              </li>
+              <li>
+                Integrated security testing tools (OWASP ZAP, Snyk) into
+                development workflow for vulnerability detection
+              </li>
+              <li>
+                Collaborated in agile sprints with focus on security-first
+                development and secure peer code reviews
+              </li>
+              <li>
+                Implemented HTTPS/TLS encryption and secure session management
+                across all applications
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Technical Support & Security Analyst</div>
+            <div class="company-name">Cahayo Techlinks</div>
+            <div class="date-range">November 2022 – January 2023</div>
+            <ul class="responsibilities">
+              <li>
+                Provided cybersecurity awareness training and assisted clients
+                with security-related issues
+              </li>
+              <li>
+                Conducted basic security assessments for client systems and
+                recommended security improvements
+              </li>
+              <li>
+                Assisted in malware removal and implemented security hardening
+                measures for client computers
+              </li>
+              <li>
+                Educated clients on password security, phishing prevention, and
+                safe online practices
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">
+              Data Clerk & Security Compliance Officer
+            </div>
+            <div class="company-name">ICAP Kenya</div>
+            <div class="date-range">March 2013 – September 2016</div>
+            <ul class="responsibilities">
+              <li>
+                Managed secure data entry and validation in health information
+                systems (C-PAD & DHIS) with strict access controls
+              </li>
+              <li>
+                Conducted quarterly security audits and data quality assessments
+                to ensure compliance with health data protection standards
+              </li>
+              <li>
+                Implemented data backup and recovery procedures to ensure
+                business continuity
+              </li>
+              <li>
+                Enhanced data accuracy and maintained confidentiality of
+                sensitive health monitoring indicators
+              </li>
+              <li>
+                Trained staff on data privacy regulations and secure data
+                handling practices
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">SECURITY PROJECTS & IMPLEMENTATIONS</h2>
+          <div class="projects-grid">
+            <div class="project-item">
+              <div class="project-title">Secure Community Intervention App</div>
+              <div class="project-desc">
+                Django-based application with JWT authentication, role-based
+                access control, encrypted data storage, and OWASP security
+                measures
+              </div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">Secure E-commerce Platform</div>
+              <div class="project-desc">
+                Online Pet Shop with PCI-DSS compliant payment integration, XSS
+                prevention, CSRF protection, and secure session management
+                (React & Rails)
+              </div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">CI/CD Security Pipeline</div>
+              <div class="project-desc">
+                Automated security scanning pipeline using GitHub Actions,
+                SonarQube, and Snyk for vulnerability detection in code
+                repositories
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Secure Blog Platform</div>
+              <div class="project-desc">
+                Full-stack React & Sinatra web app with input sanitization, SQL
+                injection prevention, and secure authentication
+              </div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">Security Compliance Dashboard</div>
+              <div class="project-desc">
+                Power BI dashboards for visualizing security metrics,
+                vulnerability trends, and compliance status for health programs
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Data Sanitization Automation</div>
+              <div class="project-desc">
+                Python scripts for secure data cleaning with PII detection, data
+                masking, and validation before processing
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">CERTIFICATIONS & TRAINING</h2>
+          <div class="certifications-grid">
+            <div class="cert-item">
+              <div class="cert-name">
+                Data Analytics & Professional Foundations
+              </div>
+              <div class="cert-issuer">ALX Africa (2024)</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">Software Development Certificate</div>
+              <div class="cert-issuer">Moringa School (2022)</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">OWASP Top 10 Security Risks</div>
+              <div class="cert-issuer">Self-Directed Learning</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">Secure Coding Practices</div>
+              <div class="cert-issuer">Online Training Programs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EDUCATION</h2>
+
+          <div class="education-item">
+            <div class="degree">Data Science Course (Security Focus)</div>
+            <div class="institution">ALX Africa</div>
+            <div class="year">
+              September 2024 – Ongoing | Certificate in Data Analytics &
+              Professional Foundations Attained
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">Certificate in Software Development</div>
+            <div class="institution">Moringa School</div>
+            <div class="year">2022</div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">Diploma in Information Technology</div>
+            <div class="institution">Foundation Institute of Africa</div>
+            <div class="year">2011</div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">
+              Kenya Certificate of Secondary Education (KCSE)
+            </div>
+            <div class="institution">Simenya Secondary School</div>
+            <div class="year">2010</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL REFERENCES</h2>
+          <div class="referees-grid">
+            <div class="referee-item">
+              <div class="referee-name">Michael Miller</div>
+              <div class="referee-title">
+                Strategic Information Officer, Center for Health Solutions
+              </div>
+              <div class="referee-contact">0704954706</div>
+            </div>
+            <div class="referee-item">
+              <div class="referee-name">Florence Agengo</div>
+              <div class="referee-title">Data Officer, Gem Sub-County</div>
+              <div class="referee-contact">0725410041</div>
+            </div>
+            <div class="referee-item">
+              <div class="referee-name">Jesca Mutai</div>
+              <div class="referee-title">
+                Director, Bondo Officer, Gem Sub-County
+              </div>
+              <div class="referee-contact">0701081771</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function downloadCV() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

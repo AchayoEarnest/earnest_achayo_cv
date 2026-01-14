@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend Engineer CV - Earnest Odhiambo Achayo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .download-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #2c3e50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .download-btn:hover {
+        background: #34495e;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .cv-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: white;
+        padding: 50px 40px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      .header .title {
+        font-size: 19px;
+        opacity: 0.95;
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-link {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 35px;
+      }
+
+      .section-title {
+        color: #2c3e50;
+        font-size: 22px;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #34495e;
+        font-weight: 600;
+      }
+
+      .summary-text {
+        line-height: 1.8;
+        color: #555;
+        text-align: justify;
+        font-size: 15px;
+      }
+
+      .competencies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .competency-item {
+        background: #f8f9fa;
+        padding: 12px 18px;
+        border-radius: 8px;
+        color: #2c3e50;
+        border-left: 4px solid #34495e;
+        font-size: 14px;
+      }
+
+      .skills-section {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .skill-row {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: baseline;
+      }
+
+      .skill-label {
+        font-weight: 600;
+        color: #2c3e50;
+        min-width: 220px;
+        font-size: 15px;
+      }
+
+      .skill-value {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .experience-item {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #34495e;
+      }
+
+      .job-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .company-name {
+        color: #34495e;
+        font-size: 16px;
+        margin-top: 4px;
+      }
+
+      .date-range {
+        color: #7f8c8d;
+        font-size: 14px;
+        font-style: italic;
+        margin-top: 4px;
+      }
+
+      .responsibilities {
+        list-style: none;
+        margin-top: 12px;
+      }
+
+      .responsibilities li {
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 8px;
+        color: #555;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .responsibilities li:before {
+        content: "⚙️";
+        position: absolute;
+        left: 0;
+        font-size: 16px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .project-item {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+      }
+
+      .project-title {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+
+      .project-desc {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .project-tech {
+        color: #34495e;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+
+      .project-link {
+        color: #3498db;
+        text-decoration: none;
+        font-size: 12px;
+        display: inline-block;
+      }
+
+      .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .cert-item {
+        background: #ecf0f1;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #2c3e50;
+      }
+
+      .cert-name {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+
+      .cert-issuer {
+        color: #7f8c8d;
+        font-size: 13px;
+      }
+
+      .education-item {
+        margin-bottom: 18px;
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      .degree {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+      }
+
+      .institution {
+        color: #34495e;
+        margin-top: 4px;
+        font-size: 14px;
+      }
+
+      .year {
+        color: #7f8c8d;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+
+      .referees-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .referee-item {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 8px;
+        border-top: 4px solid #3498db;
+      }
+
+      .referee-name {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .referee-title {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .referee-contact {
+        color: #34495e;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+
+        .download-btn {
+          display: none;
+        }
+
+        .cv-container {
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        .section {
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 28px;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .content {
+          padding: 20px;
+        }
+
+        .download-btn {
+          top: 10px;
+          right: 10px;
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .competencies-grid,
+        .projects-grid,
+        .certifications-grid,
+        .referees-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .skill-row {
+          flex-direction: column;
+        }
+
+        .skill-label {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="download-btn" onclick="downloadCV()">🔧 Download PDF</button>
+
+    <div class="cv-container">
+      <div class="header">
+        <h1>EARNEST ODHIAMBO ACHAYO</h1>
+        <div class="title">
+          Backend Engineer | API Developer | Database Architect
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item">📧 earnytechlive@gmail.com</div>
+          <div class="contact-item">📱 0111486539 / 0739536402</div>
+          <div class="contact-item">📍 P.O. Box 82-40605, Sidindi, Siaya</div>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/AchayoEarnest"
+            class="social-link"
+            target="_blank"
+          >
+            GitHub: github.com/AchayoEarnest
+          </a>
+          <a
+            href="https://linkedin.com/in/earnest-achayo"
+            class="social-link"
+            target="_blank"
+          >
+            LinkedIn: linkedin.com/in/earnest-achayo
+          </a>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+          <p class="summary-text">
+            Experienced Backend Engineer with 4+ years of expertise in
+            designing, building, and maintaining scalable server-side
+            applications and RESTful APIs. Specialized in Ruby on Rails, Django,
+            and Node.js with deep knowledge of database architecture,
+            optimization, and data modeling. Proven track record of developing
+            high-performance backend systems that handle complex business logic
+            and serve thousands of users. Skilled in implementing authentication
+            systems, data validation, API integration, and database
+            optimization. Strong advocate for clean code, test-driven
+            development, and microservices architecture.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">CORE COMPETENCIES</h2>
+          <div class="competencies-grid">
+            <div class="competency-item">RESTful API Design & Development</div>
+            <div class="competency-item">Database Design & Optimization</div>
+            <div class="competency-item">
+              Server-Side Application Development
+            </div>
+            <div class="competency-item">
+              Authentication & Authorization Systems
+            </div>
+            <div class="competency-item">Microservices Architecture</div>
+            <div class="competency-item">Data Migration & ETL Processes</div>
+            <div class="competency-item">
+              Performance Optimization & Caching
+            </div>
+            <div class="competency-item">API Documentation & Testing</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">TECHNICAL SKILLS</h2>
+          <div class="skills-section">
+            <div class="skill-row">
+              <div class="skill-label">Backend Languages:</div>
+              <div class="skill-value">
+                Python, Ruby, JavaScript (Node.js), SQL
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Backend Frameworks:</div>
+              <div class="skill-value">
+                Ruby on Rails, Django, Express.js, Sinatra, Flask
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Database Systems:</div>
+              <div class="skill-value">
+                PostgreSQL, MySQL, SQLite, MongoDB, Redis (Caching)
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Database Skills:</div>
+              <div class="skill-value">
+                Query Optimization, Indexing, Normalization, Migrations, ORM
+                (ActiveRecord, SQLAlchemy)
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">API Development:</div>
+              <div class="skill-value">
+                RESTful APIs, GraphQL (Basic), JSON/XML, API Versioning, Rate
+                Limiting
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Authentication & Security:</div>
+              <div class="skill-value">
+                JWT, OAuth 2.0, Session Management, bcrypt, Password Hashing,
+                CORS
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Testing & Quality:</div>
+              <div class="skill-value">
+                RSpec, pytest, Jest, Unit Testing, Integration Testing, TDD
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">DevOps & Tools:</div>
+              <div class="skill-value">
+                Git/GitHub, Docker (Basic), Heroku, Postman, pgAdmin, Linux/Unix
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Additional Skills:</div>
+              <div class="skill-value">
+                Data Validation, Background Jobs (Sidekiq, Celery), Webhooks,
+                Third-party API Integration
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+          <div class="experience-item">
+            <div class="job-title">Backend Developer</div>
+            <div class="company-name">
+              Center for Health Solutions (CHS), Ugunja Sub-County
+            </div>
+            <div class="date-range">March 2023 – September 2025</div>
+            <ul class="responsibilities">
+              <li>
+                Architected and developed scalable backend systems for M&E data
+                collection using Python and Google App Scripts, processing
+                10,000+ records monthly
+              </li>
+              <li>
+                Designed and implemented RESTful APIs for mobile and web
+                applications with comprehensive authentication and authorization
+                mechanisms
+              </li>
+              <li>
+                Optimized database schemas and SQL queries, reducing query
+                execution time by 45% and improving overall system performance
+              </li>
+              <li>
+                Built automated data validation pipelines with custom business
+                logic to ensure data integrity across multiple data sources
+              </li>
+              <li>
+                Implemented background job processing for data aggregation and
+                reporting, reducing server load by 35%
+              </li>
+              <li>
+                Developed data synchronization services to integrate legacy
+                health information systems with modern applications
+              </li>
+              <li>
+                Created comprehensive API documentation using Swagger/OpenAPI
+                for seamless frontend integration
+              </li>
+              <li>
+                Implemented caching strategies using Redis equivalents,
+                improving API response times by 50%
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Backend Engineer</div>
+            <div class="company-name">Moringa School</div>
+            <div class="date-range">March 2022 – November 2022</div>
+            <ul class="responsibilities">
+              <li>
+                Developed and maintained 15+ RESTful APIs using Ruby on Rails
+                and Django with comprehensive CRUD operations
+              </li>
+              <li>
+                Designed normalized database schemas for multiple applications,
+                ensuring data integrity and optimal performance
+              </li>
+              <li>
+                Implemented JWT-based authentication systems with role-based
+                access control (RBAC) for secure user management
+              </li>
+              <li>
+                Built data migration scripts and ETL pipelines for transitioning
+                legacy data to new database structures
+              </li>
+              <li>
+                Optimized database queries using indexing, eager loading, and
+                query refactoring, achieving 40% performance improvement
+              </li>
+              <li>
+                Developed background workers for asynchronous task processing
+                (email notifications, data exports, file processing)
+              </li>
+              <li>
+                Implemented API versioning and deprecation strategies to ensure
+                backward compatibility
+              </li>
+              <li>
+                Wrote comprehensive unit and integration tests achieving 85%+
+                code coverage using RSpec and pytest
+              </li>
+              <li>
+                Integrated third-party APIs (payment gateways, email services,
+                SMS providers) into backend systems
+              </li>
+              <li>
+                Collaborated with frontend developers to design efficient API
+                contracts and data structures
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Database & Systems Developer</div>
+            <div class="company-name">ICAP Kenya</div>
+            <div class="date-range">March 2013 – September 2016</div>
+            <ul class="responsibilities">
+              <li>
+                Developed and maintained backend modules for health information
+                systems (C-PAD & DHIS) serving 50+ facilities
+              </li>
+              <li>
+                Created stored procedures and complex SQL queries for data
+                aggregation and reporting
+              </li>
+              <li>
+                Implemented data validation rules and constraints to ensure
+                database integrity and compliance
+              </li>
+              <li>
+                Built automated data backup and recovery systems, ensuring 99.9%
+                data availability
+              </li>
+              <li>
+                Developed data export APIs for interoperability between multiple
+                health information systems
+              </li>
+              <li>
+                Optimized database performance through indexing, query
+                optimization, and database tuning
+              </li>
+              <li>
+                Created ETL processes for monthly data aggregation and
+                submission to national reporting systems
+              </li>
+              <li>
+                Collaborated with system administrators to implement database
+                security best practices
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">BACKEND PROJECTS & IMPLEMENTATIONS</h2>
+          <div class="projects-grid">
+            <div class="project-item">
+              <div class="project-title">Community Health API</div>
+              <div class="project-desc">
+                Comprehensive RESTful API with authentication, CRUD operations,
+                data validation, and real-time notifications
+              </div>
+              <div class="project-tech">
+                Tech: Django REST Framework, PostgreSQL, Celery, Redis
+              </div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >View on GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">E-Commerce Backend System</div>
+              <div class="project-desc">
+                Complete backend for online store with cart management, order
+                processing, inventory tracking, and payment integration
+              </div>
+              <div class="project-tech">
+                Tech: Ruby on Rails, PostgreSQL, Sidekiq, Stripe API
+              </div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >View on GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">Blog API with Authentication</div>
+              <div class="project-desc">
+                RESTful API with JWT authentication, user roles, post
+                management, comments, and pagination
+              </div>
+              <div class="project-tech">Tech: Sinatra, SQLite, JWT, bcrypt</div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >View on GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">Data Aggregation Service</div>
+              <div class="project-desc">
+                Background service for collecting, validating, and aggregating
+                data from multiple sources with scheduled tasks
+              </div>
+              <div class="project-tech">
+                Tech: Python, Google App Scripts, PostgreSQL
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Task Management API</div>
+              <div class="project-desc">
+                Backend API for task tracking with user authentication, team
+                collaboration, and real-time updates
+              </div>
+              <div class="project-tech">
+                Tech: Node.js, Express, MongoDB, Socket.io
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Database Migration Tool</div>
+              <div class="project-desc">
+                Custom ETL pipeline for migrating legacy health data to modern
+                database structure with validation
+              </div>
+              <div class="project-tech">
+                Tech: Python, Pandas, PostgreSQL, SQLAlchemy
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">CERTIFICATIONS & TRAINING</h2>
+          <div class="certifications-grid">
+            <div class="cert-item">
+              <div class="cert-name">Software Development Certificate</div>
+              <div class="cert-issuer">Moringa School (2022)</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">Data Science Course</div>
+              <div class="cert-issuer">ALX Africa (Ongoing - 2024)</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">Data Analytics Certificate</div>
+              <div class="cert-issuer">ALX Africa (2024)</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">Professional Foundations Certificate</div>
+              <div class="cert-issuer">ALX Africa (2024)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EDUCATION</h2>
+
+          <div class="education-item">
+            <div class="degree">Data Science Course</div>
+            <div class="institution">ALX Africa</div>
+            <div class="year">
+              September 2024 – Ongoing | Certificates in Data Analytics &
+              Professional Foundations Attained
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">Certificate in Software Development</div>
+            <div class="institution">Moringa School</div>
+            <div class="year">2022</div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">Diploma in Information Technology</div>
+            <div class="institution">Foundation Institute of Africa</div>
+            <div class="year">2011</div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">
+              Kenya Certificate of Secondary Education (KCSE)
+            </div>
+            <div class="institution">Simenya Secondary School</div>
+            <div class="year">2010</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL REFERENCES</h2>
+          <div class="referees-grid">
+            <div class="referee-item">
+              <div class="referee-name">Michael Miller</div>
+              <div class="referee-title">
+                Strategic Information Officer, Center for Health Solutions
+              </div>
+              <div class="referee-contact">0704954706</div>
+            </div>
+            <div class="referee-item">
+              <div class="referee-name">Florence Agengo</div>
+              <div class="referee-title">Data Officer, Gem Sub-County</div>
+              <div class="referee-contact">0725410041</div>
+            </div>
+            <div class="referee-item">
+              <div class="referee-name">Jesca Mutai</div>
+              <div class="referee-title">
+                Director, Bondo Officer, Gem Sub-County
+              </div>
+              <div class="referee-contact">0701081771</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function downloadCV() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

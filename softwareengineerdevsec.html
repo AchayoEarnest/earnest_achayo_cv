@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Earnest Odhiambo Achayo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .download-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4caf50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .download-btn:hover {
+        background: #45a049;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .cv-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        color: white;
+        padding: 50px 40px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      .header .title {
+        font-size: 18px;
+        opacity: 0.9;
+        margin-bottom: 25px;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-link {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 35px;
+      }
+
+      .section-title {
+        color: #2c3e50;
+        font-size: 22px;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #3498db;
+        font-weight: 600;
+      }
+
+      .summary-text {
+        line-height: 1.8;
+        color: #555;
+        text-align: justify;
+        font-size: 15px;
+      }
+
+      .competencies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .competency-item {
+        background: #f8f9fa;
+        padding: 12px 18px;
+        border-radius: 8px;
+        color: #2c3e50;
+        border-left: 4px solid #3498db;
+        font-size: 14px;
+      }
+
+      .skills-section {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .skill-row {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: baseline;
+      }
+
+      .skill-label {
+        font-weight: 600;
+        color: #2c3e50;
+        min-width: 180px;
+        font-size: 15px;
+      }
+
+      .skill-value {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .experience-item {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+      }
+
+      .job-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .company-name {
+        color: #3498db;
+        font-size: 16px;
+        margin-top: 4px;
+      }
+
+      .date-range {
+        color: #7f8c8d;
+        font-size: 14px;
+        font-style: italic;
+        margin-top: 4px;
+      }
+
+      .responsibilities {
+        list-style: none;
+        margin-top: 12px;
+      }
+
+      .responsibilities li {
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 8px;
+        color: #555;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .responsibilities li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #3498db;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .project-item {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 8px;
+        border-left: 4px solid #4caf50;
+      }
+
+      .project-title {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+
+      .project-desc {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .project-link {
+        color: #3498db;
+        text-decoration: none;
+        font-size: 12px;
+        margin-top: 6px;
+        display: inline-block;
+      }
+
+      .education-item {
+        margin-bottom: 18px;
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      .degree {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+      }
+
+      .institution {
+        color: #3498db;
+        margin-top: 4px;
+        font-size: 14px;
+      }
+
+      .year {
+        color: #7f8c8d;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+
+      .referees-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .referee-item {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 8px;
+        border-top: 4px solid #4caf50;
+      }
+
+      .referee-name {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .referee-title {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .referee-contact {
+        color: #3498db;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+
+        .download-btn {
+          display: none;
+        }
+
+        .cv-container {
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        .section {
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 28px;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .content {
+          padding: 20px;
+        }
+
+        .download-btn {
+          top: 10px;
+          right: 10px;
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .competencies-grid,
+        .projects-grid,
+        .referees-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .skill-row {
+          flex-direction: column;
+        }
+
+        .skill-label {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="download-btn" onclick="downloadCV()">📥 Download PDF</button>
+
+    <div class="cv-container">
+      <div class="header">
+        <h1>EARNEST ODHIAMBO ACHAYO</h1>
+        <div class="title">Software Engineer & Data Analyst</div>
+
+        <div class="contact-info">
+          <div class="contact-item">📧 earnytechlive@gmail.com</div>
+          <div class="contact-item">📱 0111486539 / 0739536402</div>
+          <div class="contact-item">📍 P.O. Box 82-40605, Sidindi, Siaya</div>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/AchayoEarnest"
+            class="social-link"
+            target="_blank"
+          >
+            GitHub: github.com/AchayoEarnest
+          </a>
+          <a
+            href="https://linkedin.com/in/earnest-achayo"
+            class="social-link"
+            target="_blank"
+          >
+            LinkedIn: linkedin.com/in/earnest-achayo
+          </a>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="section">
+          <h2 class="section-title">PROFILE SUMMARY</h2>
+          <p class="summary-text">
+            Dynamic and results-oriented Software Engineer & Data Analyst with
+            over four years of experience in developing software solutions and
+            managing data systems. Skilled in JavaScript, Ruby on Rails, React,
+            SQL, and Python, with proven ability to integrate analytics into
+            software workflows. Adept at using data to inform decisions, improve
+            performance, and deliver scalable digital products.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">CORE COMPETENCIES</h2>
+          <div class="competencies-grid">
+            <div class="competency-item">
+              Software Design, Development & Testing
+            </div>
+            <div class="competency-item">
+              Data Cleaning, Analysis & Visualization
+            </div>
+            <div class="competency-item">
+              Full-Stack Development (React JS, Django, Ruby on Rails)
+            </div>
+            <div class="competency-item">
+              Database Management (SQL, MySQL, PostgreSQL)
+            </div>
+            <div class="competency-item">
+              Agile & Collaborative Team Environments
+            </div>
+            <div class="competency-item">API Integration & Automation</div>
+            <div class="competency-item">Data Quality Auditing & Reporting</div>
+            <div class="competency-item">
+              Problem Solving & Process Optimization
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">TECHNICAL SKILLS</h2>
+          <div class="skills-section">
+            <div class="skill-row">
+              <div class="skill-label">Languages:</div>
+              <div class="skill-value">
+                JavaScript, Python, Ruby, SQL, HTML, CSS
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Frameworks:</div>
+              <div class="skill-value">React JS, Ruby on Rails, Django</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Data Tools:</div>
+              <div class="skill-value">Power BI, Excel</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Databases:</div>
+              <div class="skill-value">MySQL, PostgreSQL</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Version Control:</div>
+              <div class="skill-value">Git, GitHub</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">Design & Collaboration:</div>
+              <div class="skill-value">Figma, VS Code, Agile Tools</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+          <div class="experience-item">
+            <div class="job-title">Data Officer</div>
+            <div class="company-name">
+              Center for Health Solutions (CHS), Ugunja Sub-County
+            </div>
+            <div class="date-range">March 2023 – September 2025</div>
+            <ul class="responsibilities">
+              <li>
+                Led the team in developing M&E data collection tools using
+                Google App Scripts and Google Sheets
+              </li>
+              <li>
+                Conducted regular data quality audits and ensured database
+                accuracy for DREAMS Program
+              </li>
+              <li>
+                Led my team in data review meetings to analyse trends in data
+                and coming up with strategies on how to improve our services in
+                the community
+              </li>
+              <li>
+                Supported implementation of real-time web and mobile data
+                reporting systems
+              </li>
+              <li>
+                Consolidated, validated, and visualized program data for
+                strategic review meetings
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Software Developer</div>
+            <div class="company-name">Moringa School</div>
+            <div class="date-range">March 2022 – November 2022</div>
+            <ul class="responsibilities">
+              <li>
+                Designed and deployed full-stack web applications using React JS
+                and Ruby on Rails
+              </li>
+              <li>
+                Implemented RESTful APIs and optimized database queries for
+                performance
+              </li>
+              <li>
+                Collaborated in agile sprints, peer code reviews, and feature
+                delivery cycles
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Cyber Café Attendant</div>
+            <div class="company-name">Cahayo Techlinks</div>
+            <div class="date-range">November 2022 – January 2023</div>
+            <ul class="responsibilities">
+              <li>
+                Assisted clients in resolving software-related issues and online
+                processes
+              </li>
+              <li>
+                Delivered computer package training sessions and excellent
+                customer service
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Data Clerk</div>
+            <div class="company-name">ICAP Kenya</div>
+            <div class="date-range">March 2013 – September 2016</div>
+            <ul class="responsibilities">
+              <li>
+                Managed data entry and validation in health information systems
+                (C-PAD & DHIS)
+              </li>
+              <li>
+                Conducted quarterly data quality assessments and generated
+                performance reports
+              </li>
+              <li>
+                Enhanced data accuracy and compliance for health monitoring
+                indicators
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROJECTS</h2>
+          <div class="projects-grid">
+            <div class="project-item">
+              <div class="project-title">Personal Blog Website</div>
+              <div class="project-desc">Full-stack React & Sinatra web app</div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">Online Pet Shop</div>
+              <div class="project-desc">
+                E-commerce web platform with React & Rails
+              </div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">Tembea Kenya</div>
+              <div class="project-desc">
+                React-based tourism recommendation website
+              </div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+            <div class="project-item">
+              <div class="project-title">Data Cleaning Automation</div>
+              <div class="project-desc">
+                Built Python pipelines to clean and validate CSV datasets
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Power BI Dashboards</div>
+              <div class="project-desc">
+                Designed KPI dashboards to visualize health program outcomes
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">Community Intervention App</div>
+              <div class="project-desc">Designed in Django and Javascript</div>
+              <a
+                href="https://github.com/AchayoEarnest"
+                class="project-link"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EDUCATION</h2>
+
+          <div class="education-item">
+            <div class="degree">ALX Africa – Data Science Course</div>
+            <div class="institution">Started September 2024 – Ongoing</div>
+            <div class="year">
+              Already attained Certificate in Data Analytics & Professional
+              Foundations
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">Certificate in Software Development</div>
+            <div class="institution">Moringa School</div>
+            <div class="year">2022</div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">Diploma in Information Technology</div>
+            <div class="institution">Foundation Institute of Africa</div>
+            <div class="year">2011</div>
+          </div>
+
+          <div class="education-item">
+            <div class="degree">
+              Kenya Certificate of Secondary Education (KCSE)
+            </div>
+            <div class="institution">Simenya Secondary School</div>
+            <div class="year">2010</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">REFEREES</h2>
+          <div class="referees-grid">
+            <div class="referee-item">
+              <div class="referee-name">Michael Miller</div>
+              <div class="referee-title">
+                Strategic Information Officer, Center for Health Solutions
+              </div>
+              <div class="referee-contact">0704954706</div>
+            </div>
+            <div class="referee-item">
+              <div class="referee-name">Florence Agengo</div>
+              <div class="referee-title">Data Officer, Gem Sub-County</div>
+              <div class="referee-contact">0725410041</div>
+            </div>
+            <div class="referee-item">
+              <div class="referee-name">Jesca Mutai</div>
+              <div class="referee-title">
+                Director, Bondo Officer, Gem Sub-County
+              </div>
+              <div class="referee-contact">0701081771</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function downloadCV() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>
